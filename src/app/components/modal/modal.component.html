@@ -1,0 +1,20 @@
+<body>
+    <div class="container-background">
+        <h3 class="container-itens-text">{{groupName.length > 0 ? groupName : "Novo Grupo"}}</h3>
+        <div class="container-itens-input">
+            <div class="button-close-item">
+                <span class="span-item"
+                      matTooltip="Fechar"
+                      matTooltipPosition="above"
+                      matTooltipShowDelay="500"
+                      matTooltipHideDelay="200"
+                      (click)="closeModal()">
+                    <mat-icon class="icon-item">close</mat-icon>
+                </span>
+            </div>
+            <label class="label-item" for="input-name">Nome</label>
+            <input class="input-item" id="input-name" [(ngModel)]="groupName" (keydown)="attTitle($event)">
+            <button class="button-item" (click)="saveGroup()">Salvar Grupo</button>
+        </div>
+    </div>
+</body>

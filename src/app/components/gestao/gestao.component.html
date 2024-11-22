@@ -1,0 +1,66 @@
+<body>
+    <div class="container-background">
+        <div class="container-background-section">
+            <section class="container-background-section-itens"> 
+                <h3 class="container-background-section-itens-text">Gestão Profissional</h3>
+
+                <div class="section-group-itens">
+                    <label class="label-item">Caminho do arquivo .XMF</label>
+                    <div class="section-group-itens-inputs">
+                        <input class="input-item" type="text">
+                        <mat-icon class="icon-item">folder_open</mat-icon>
+                    </div>
+
+                    <div class="section-group-checkbox">
+                        <div class="section-group-checkbox-itens">
+                            <input class="item-checkbox" type="checkbox" id="checkbox1" [(ngModel)]="checkbox1" (change)="escolhaCheckbox('checkbox1')" />
+                            <label class="label-item" for="checkbox1">Xwok 4.x</label>
+                        </div>
+                        <div class="section-group-checkbox-itens">
+                            <input class="item-checkbox" type="checkbox" id="checkbox2" [(ngModel)]="checkbox2" (change)="escolhaCheckbox('checkbox2')" />
+                            <label class="label-item" for="checkbox2">Gestão Profissional (5.x)</label>
+                        </div>
+                    </div>
+
+                    <label class="label-item">Token Integração</label>
+                    <div class="section-group-itens-inputs">
+                        <input class="input-item" type="text">
+                        <mat-icon class="icon-item">content_copy</mat-icon>
+                    </div>
+
+                    <button class="section-group-itens-button" (click)="clickSalvar()">Salvar</button>
+                </div>
+            </section>
+
+            <section class="container-background-section-itens">
+                <h3 class="container-background-section-itens-text">Gestão Empresarial</h3>
+
+                <div class="section-group-itens">
+                    <div class="section-group-itens-double-input">
+                        <div class="group-item-double-input">
+                            <label class="label-item">Banco de dados</label>
+                            <input class="input-item" type="text">
+                        </div>
+
+                        <div class="group-item-double-input">
+                            <label class="label-item">Unidade</label>
+                            <input class="input-item" type="text">
+                        </div>
+                    </div>
+
+                    <div class="section-group-itens-solo-input">
+                        <label class="label-item">Token Integração</label>
+                        <div class="section-group-itens-inputs">
+                            <input class="input-item" type="text" >
+                            <mat-icon class="icon-item">content_copy</mat-icon>
+                        </div>
+                    </div>
+                    
+                    <button class="section-group-itens-button" (click)="clickSalvar()">Salvar</button>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div  *ngIf="loading" class="container-background-loading"></div>
+    <span *ngIf="loading" class="loading-symbol"></span>
+</body>
