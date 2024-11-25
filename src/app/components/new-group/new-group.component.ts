@@ -10,12 +10,10 @@ import { group } from '@angular/animations';
   styleUrl: './new-group.component.css'
 })
 export class NewGroupComponent {
-  constructor(private dialog: MatDialog) { 
-    this.copyGoups = this.groups
-  }
+  constructor(private dialog: MatDialog) { }
   
   groups: any[] = [];
-  copyGoups: any[] = [];
+  copyGroups: any[] = [];
   pesquisa = '';
 
   openModal() {
@@ -55,13 +53,8 @@ export class NewGroupComponent {
     }
   }
 
-  pesquisar(event: any) {
-    const valueLowerCase = event.target.value.toLowerCase();
-    console.log(valueLowerCase)
-    this.groups = this.groups.filter((group) => group.groupName.toLowerCase().includes(valueLowerCase));
-    if (event.target.value == '') {
-      
-    }
+  get filtered (): any[] {
+     return this.copyGroups = this.groups.filter((group) => group.groupName.toLowerCase().includes(this.pesquisa.toLowerCase()));
   }
 }
     

@@ -3,11 +3,11 @@
         <h3 class="container-background-item-text">Grupos</h3>
         <div class="container-background-section">
             <div class="container-background-section-tools">
-                <input class="input-item" id="input-name" placeholder="Pesquisar" (input)="pesquisar($event)"/>
+                <input class="input-item" id="input-name" placeholder="Pesquisar" [(ngModel)]="pesquisa"/>
                 <button class="button-item" (click)="openModal()">Novo Grupo</button>
             </div>
             <div class="container-background-section-itens">
-                <div class="card-item" *ngFor="let group of groups">
+                <div class="card-item" *ngFor="let group of filtered">
                     <p>{{ group.groupName }}<p>
                     <div class="box-icon-delete-item">
                         <span (click)="deleteCard(group.id)"> 
