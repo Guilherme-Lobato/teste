@@ -4,6 +4,11 @@
         <div class="container-background-section">
             <div class="container-background-section-tools">
                 <input class="input-item" id="input-name" placeholder="Pesquisar" [(ngModel)]="pesquisa"/>
+                <select class="select-item" [(ngModel)]="tipo">
+                    <option></option>
+                    <option>Laudador</option>
+                    <option>Dentista</option>
+                </select>
                 <button class="button-item" (click)="openModal()">Novo Grupo</button>
             </div>
             <div class="container-background-section-itens">
@@ -18,7 +23,10 @@
                         <span (click)="editCard(group.id)"> 
                             <mat-icon class="icon-edit-item">edit</mat-icon>
                         </span>
-                    </div>  
+                    </div> 
+                    <span class="tag-group-item">
+                        {{group.typeGroup}}
+                    </span> 
                 </div>
             </div>
         </div>

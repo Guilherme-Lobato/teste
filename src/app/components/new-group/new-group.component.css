@@ -34,7 +34,7 @@ body {
 
 .container-background-section-itens {
     background-color: #EAEEF1;
-    margin: 0;
+    margin-top: 20px;
     border-radius: 11px;
     padding: 20px;
     width: 100%;
@@ -44,14 +44,9 @@ body {
 }
 
 .container-background-section-tools {
-    background-color: #FFFFFF;
-    margin: 0;
-    border-radius: 11px;
-    padding: 20px;
-    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+    flex-wrap: nowrap;
+    gap: 30px;
 }
 
 .button-item {
@@ -129,4 +124,32 @@ p {
     outline: none;
     border-radius: 11px;
     transition: all .2s;
+}
+
+.select-item {
+    width: 20%;
+    font-family: Darker Grotesque, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #557588;
+    background-color: #eaeef1;
+    border: 2px solid #98cbe9;
+    outline: none;
+    border-radius: 11px;
+    transition: all .2s;
+}
+
+.tag-group-item {
+    margin-right: auto;
+    padding: 2px 15px;
+    font-family: Darker Grotesque;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #6ca7b9;
+    border: 1px solid #6ca7b9;
+    border-radius: 8px;
+    position: absolute;
+    left: 10px;
+    bottom: 12px;
 }

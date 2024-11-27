@@ -40,8 +40,20 @@
     color: #557588;
 }
 
+.section-itens-input {
+    display: flex;
+    flex-flow: nowrap;
+    width: 100%;
+    gap: 20px;
+}
+
+.section-input {
+    width: calc(100% / 2);
+    display: flex;
+    flex-direction: column;
+}
+
 .input-item {
-    width: 50%;
     padding: 15px 50px 15px 15px;
     font-family: Darker Grotesque, sans-serif;
     font-size: 1.3rem;
@@ -53,6 +65,7 @@
     border-radius: 11px;
     transition: all .2s;
     margin-top: 10px;
+    flex-wrap: nowrap;
 }
 
 .input-item:invalid {
@@ -95,4 +108,27 @@
 form {
     display: flex;
     flex-direction: column;
+}
+
+.select-item {
+    padding: 15px 50px 15px 15px;
+    font-family: Darker Grotesque, sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #557588;
+    background-color: #eaeef1;
+    border: none;
+    outline: none;
+    border-radius: 11px;
+    transition: all .2s;
+    margin-top: 10px;
+    flex-wrap: nowrap;
+}
+
+.select-item:invalid {
+    border: 2px solid rgb(202, 28, 28);
+}
+  
+.select-item:valid {
+    border: 2px solid #98cbe9;
 }

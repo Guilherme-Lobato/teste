@@ -13,20 +13,22 @@ export class NewGroupComponent {
   constructor(private dialog: MatDialog) { }
   
   groups: any[] = [];
-  copyGroups: any[] = [];
   pesquisa = '';
+  tipo = '';
 
   openModal() {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: "70%",
       disableClose: true
     });
-    dialogRef.afterClosed().subscribe((groupName: string) => {
-      if (groupName) {
+    dialogRef.afterClosed().subscribe((formulario) => {
+      if (groupName && typeGroup) {
         let novoCard = {
           id: (Math.random() * 10000).toFixed(),
-          groupName
+          groupName,
+          typeGroup
         }
+        console.log(novoCard)
         this.groups.push(novoCard);
       }
     });
@@ -37,24 +39,27 @@ export class NewGroupComponent {
   }
 
   editCard(id: number) {
-    const editName = this.groups.find((group) => id === group.id);
+    const edit = this.groups.find((group) => id === group.id);
     
-    if (editName) {
+    if (edit) {
       const dialogRef = this.dialog.open(ModalComponent, {
         width: "70%",
         disableClose: true,
-        data: { groupName: editName.groupName }
+        data: { 
+          groupName: edit.groupName,
+          typeGroup: edit.typeGroup
+         }
       });
-      dialogRef.afterClosed().subscribe((groupName: string) => {
-        if (groupName) {
-          editName.groupName = groupName;
+      dialogRef.afterClosed().subscribe(([groupName, typeGroup]: [string, string]) => {
+        if (groupName && typeGroup) {
+          edit.groupName = groupName;
+          edit.typeGroup = typeGroup;
         }
       });
     }
   }
 
   get filtered (): any[] {
-     return this.copyGroups = this.groups.filter((group) => group.groupName.toLowerCase().includes(this.pesquisa.toLowerCase()));
+     return this.groups.filter((group) => group.groupName.toLowerCase().includes(this.pesquisa.toLowerCase()) && group.typeGroup.includes(this.tipo));
   }
 }
-    

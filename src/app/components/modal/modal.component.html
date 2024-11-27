@@ -1,19 +1,29 @@
 <body>
     <div class="container-background">
-        <h3 class="container-itens-text">{{groupName.length > 0 ? groupName : "Novo Grupo"}}</h3>
+        <h3 class="container-itens-text">{{formulario.get('groupName').value.length > 0 ? formulario.get('groupName').value : "Novo Grupo"}}</h3>
         <div class="container-itens-input">
             <div class="button-close-item">
                 <span class="span-item"
                       matTooltip="Fechar"
                       matTooltipPosition="above"
-                      matTooltipShowDelay="500"
-                      matTooltipHideDelay="200"
                       (click)="closeModal()">
                     <mat-icon class="icon-item">close</mat-icon>
                 </span>
             </div>
-            <label class="label-item" for="input-name">Nome</label>
-            <input class="input-item" id="input-name" [(ngModel)]="groupName" (keydown)="attTitle($event)">
+            <form [formGroup]="formulario" class="section-itens-input">
+                <div class="section-input">
+                    <label class="label-item" for="input-name">Nome</label>
+                    <input class="input-item" id="input-name" formControlName="groupName">
+                </div>
+                <div class="section-input">
+                    <label class="label-item" for="select-type">Tipo</label>
+                    <select class="select-item" id="select-type" formControlName="typeGroup">
+                        <option></option>
+                        <option>{{laudador}}</option>
+                        <option>{{dentista}}</option>
+                    </select>
+                </div>
+            </form>
             <button class="button-item" (click)="saveGroup()">Salvar Grupo</button>
         </div>
     </div>

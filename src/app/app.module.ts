@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { GestaoComponent } from './components/gestao/gestao.component';
 import { MatIconModule} from '@angular/material/icon';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { NewGroupComponent } from './components/new-group/new-group.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -25,6 +25,7 @@ import { MatTooltipModule} from '@angular/material/tooltip';
     FormsModule,
     MatDialogModule,
     MatTooltipModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideAnimationsAsync()
